@@ -15,33 +15,19 @@ public class ProductPage extends Utility {
 
     public ProductPage() {PageFactory.initElements(driver, this);
     }
-    @CacheLookup
-    @FindBy(xpath = "//a[contains(text(),'Blouse')]")
-    WebElement blouse;
+
 
     @CacheLookup
     @FindBy(xpath = "//a[@id='color_8']")
     WebElement colorWht;
 
     @CacheLookup
-    @FindBy(xpath = "//*[contains(text(),'Printed Dress')]")
-    WebElement printedDress;
-
-    @CacheLookup
     @FindBy(xpath = "//a[@id='color_13']")
     WebElement colorOrg;
 
     @CacheLookup
-    @FindBy(xpath = "//*[contains(text(),'Printed Chiffon Dress')]")
-    WebElement priChiDress;
-
-    @CacheLookup
     @FindBy(xpath = "//a[@id='color_15']")
     WebElement colorGrn;
-
-    @CacheLookup
-    @FindBy(xpath = "(//div[@class='right-block']//a[contains(text(),'Printed Summer Dress')]")
-    WebElement summerDress;
 
     @CacheLookup
     @FindBy(xpath = "//a[@id='color_14']")
