@@ -20,8 +20,8 @@ public class WomencategorySteps {
     }
 
     @And("^I select one \"([^\"]*)\"$")
-    public void iSelectOne(String product)  {
-        new ProductPage().selectedProduct(product);
+    public void iSelectOne(String pro) throws InterruptedException {
+        new ProductPage().clickOnTheProduct(pro);
 
     }
 

@@ -8,6 +8,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class CreateAccountPage extends Utility {
@@ -45,8 +47,8 @@ public class CreateAccountPage extends Utility {
     WebElement city;
 
     @CacheLookup
-    @FindBy(xpath = "//select[@id='id_state']")
-    WebElement state;
+    @FindBy(css = "#id_state")
+   WebElement state;
 
     @CacheLookup
     @FindBy(xpath = "//input[@id='postcode']")
@@ -64,7 +66,9 @@ public class CreateAccountPage extends Utility {
     @FindBy(xpath = "//button[@id='submitAccount']")
     WebElement registerbutton;
 
-
+   @CacheLookup
+   @FindBy(xpath = "//option[contains(text(),'California')]")
+   WebElement california;
 
    public void enterRandomEmailfornewacountcreation() {
        sendRandomEmail(emailadd);
@@ -89,14 +93,16 @@ public class CreateAccountPage extends Utility {
     public void setCity(String city1){
         sendTextToElement(city,city1);
     }
-    public void setState(){
-        selectByVisibleTextFromDropDown(state,"California");
-    }
+    public void setState(String st)  {
+       selectByVisibleTextFromDropDown(state,st);
+
+        }
+
     public void setPostcode(String pc){
         sendTextToElement(postcode,pc);
     }
-    public void setCountry(){
-        selectByVisibleTextFromDropDown(country,"United States");
+    public void setCountry(String con){
+        selectByVisibleTextFromDropDown(country,con);
     }
     public void setMobilenuber(String phone){
         sendTextToElement(mobilenuber,phone);

@@ -14,9 +14,8 @@ Feature: Create account page
     And I enter city "<city>"
     And I select state "<state>"
     And I enter postal code "<postal>"
-    And I select country "<country>"
     And I enter phone number "<phone>"
     And I click on register button
     Examples:
-      | email              | name  | lastname | password | address | city   | state | postal | country | phone       |
-      | xyz1286@gmail.com | test | Peter    | abcd123  | 22 deuke avenue   | London | 3     | 12345  | 21      | 07453456771 |
+      | email              | name  | lastname | password | address | city   | state | postal |   phone       |
+      | xyz1286@gmail.com | test | Peter    | abcd123  | 22 deuke avenue   | London | California  | 12345 | 07453456771 |

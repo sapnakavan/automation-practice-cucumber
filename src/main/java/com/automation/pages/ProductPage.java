@@ -8,6 +8,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class ProductPage extends Utility {
     private static final Logger log = LogManager.getLogger(ProductPage.class.getName());
 
@@ -73,18 +75,17 @@ public class ProductPage extends Utility {
     WebElement close;
 
 
-    public void selectedProduct(String Name) {
-        if (Name.equalsIgnoreCase("Blouse")) {
-            clickOnElement(blouse);
-        } else if (Name.equalsIgnoreCase("Printed Dress")) {
-            clickOnElement(printedDress);
+    @CacheLookup
+    @FindBy (xpath = "//a[@class='product-name']")
+    List<WebElement> productlist;
 
-        } else if (Name.equalsIgnoreCase("Printed Chiffon Dress")) {
-            clickOnElement(priChiDress);
-
-        } else if (Name.equalsIgnoreCase("Printed Summer Dress with Price $28.98")) {
-            clickOnElement(summerDress);
-
+    public void clickOnTheProduct (String product) throws InterruptedException {
+        for (WebElement listPrd : productlist){
+            if (listPrd.getText().equalsIgnoreCase(product)){
+                Thread.sleep(2000);
+                listPrd.click();
+                break;
+            }
         }
     }
     public void selColour(String color) {

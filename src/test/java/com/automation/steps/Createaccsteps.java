@@ -53,8 +53,8 @@ public class Createaccsteps {
     }
 
     @And("^I select state \"([^\"]*)\"$")
-    public void iSelectState()  {
-        new CreateAccountPage().setState();
+    public void iSelectState(String s)  {
+        new CreateAccountPage().setState(s);
 
     }
 
@@ -65,8 +65,8 @@ public class Createaccsteps {
     }
 
     @And("^I select country \"([^\"]*)\"$")
-    public void iSelectCountry()  {
-        new CreateAccountPage().setCountry();
+    public void iSelectCountry(String co)  {
+        new CreateAccountPage().setCountry(co);
 
     }
 
